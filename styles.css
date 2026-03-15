@@ -13,3 +13,99 @@ Secondary Colors:
 - Pink:       #F16061
 
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+:root {
+	--cw-blue: #0071bb;
+	--cw-yellow: #f7ee13;
+	--cw-dark: #333333;
+	--cw-light: #f4f4f4;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: var(--cw-light);
+	color: var(--cw-dark);
+	height: 100vh;
+	overflow: hidden;
+}
+
+/*
+	Image helper:
+	When you replace emoji icons with images, use this class for consistent size and alignment.
+	Example: <img class="location-icon" src="img/plaza.png" alt="Plaza icon">
+*/
+.location-icon {
+	width: 2.25rem;
+	height: 2.25rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	object-fit: contain;
+}
+
+.bg-cw-blue { background-color: var(--cw-blue); }
+.text-cw-blue { color: var(--cw-blue); }
+.bg-cw-yellow { background-color: var(--cw-yellow); }
+.text-cw-yellow { color: var(--cw-yellow); }
+
+.progress-bar {
+	transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hotspot-card {
+	transition: transform 0.2s, box-shadow 0.2s;
+	cursor: pointer;
+}
+
+.hotspot-card:hover:not(.locked) {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+#event-overlay,
+#impact-overlay {
+	background: rgba(0, 113, 187, 0.9);
+	backdrop-filter: blur(12px);
+}
+
+.planning-step {
+	height: 6px;
+	flex: 1;
+	background: #e2e8f0;
+	border-radius: 2px;
+}
+
+.planning-step.active {
+	background: #22c55e;
+}
+
+.log-entry {
+	border-left: 4px solid var(--cw-blue);
+	animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateX(-10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.traffic-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.project-card:hover {
+	border-color: var(--cw-blue);
+}
